@@ -1,0 +1,11 @@
+.env
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.idea/
+.vscode/
+venv/
+.env.*
+.DS_Store
+.whatsapp_history/
