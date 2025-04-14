@@ -1,3 +1,12 @@
+# whatsapp_sender.py
+# -----------------------------------------------------
+# Gère l’envoi des messages WhatsApp via l’API Twilio.
+# Utilise les identifiants d’authentification définis dans config.py.
+# Fournit une fonction unique `send_message()` pour transmettre un message.
+# -----------------------------------------------------
+
+
+
 import time
 import schedule
 from core.whatsapp_prompts import generate_prompt
@@ -18,7 +27,7 @@ def send_evening_message():
 
 def start_scheduler():
     schedule.every().day.at("08:00").do(send_morning_message)
-    schedule.every().day.at("10:41").do(send_evening_message)
+    schedule.every().day.at("13:00").do(send_evening_message)
 
     print("Bot WhatsApp lancé, en attente d’envoi... (Ctrl+C pour arrêter)")
     while True:

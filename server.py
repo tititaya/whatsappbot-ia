@@ -13,15 +13,16 @@ import os
 
 app = FastAPI()
 
-@app.get("/")
+@app.get("/", include_in_schema=False)
 def read_root():
-    return {"message": "Bot WhatsApp IA actif 🚀"}
+    return {"message": "Bot WhatsApp IA actif "}
 
-@app.get("/health")
+@app.get("/health", include_in_schema=False)
+@app.head("/health", include_in_schema=False)  # <-- ajout important pour 
 def health_check():
-    return JSONResponse(content={"status": "ok"}, status_code=200)
+    return JSONResponse(content={"status": " tkt toujour actif je ne suis pas pret a mourrir"}, status_code=200)
 
 if __name__ == "__main__":
     import uvicorn
-    port = int(os.environ.get("PORT", 8080))  # Port requis par Railway
+    port = int(os.environ.get("PORT", 8080))
     uvicorn.run("server:app", host="0.0.0.0", port=port)

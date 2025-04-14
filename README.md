@@ -25,6 +25,20 @@ Ce bot envoie automatiquement des messages WhatsApp à des horaires définis, g�
 
 > Ces ressources peuvent être utiles si vous souhaitez forker ce dépôt ou comprendre les composants techniques utilisés.
 
+
+
+---
+
+## Monitoring
+
+Le bot dispose d'une route `/health` accessible publiquement pour vérifier qu’il est bien en ligne.
+
+Il est recommandé d’utiliser un service comme [UptimeRobot](https://uptimerobot.com/) pour surveiller le domaine suivant :
+
+https://whatsappbot-ia-production.up.railway.app/health
+
+Cela permet de vérifier automatiquement que l’API est active même en cas d’inactivité prolongée.
+
 ---
 
 ## Lancement local
