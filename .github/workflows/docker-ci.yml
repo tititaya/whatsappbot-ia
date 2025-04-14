@@ -1,0 +1,42 @@
+name: Docker CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-lint-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout le code
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Linter (py_compile)
+        run: |
+          python -m compileall core/
+          python -m compileall main.py
+
+      - name: Vérification des dépendances
+        run: |
+          pip install -r requirements.txt
+
+      - name: Construction de l’image Docker
+        run: docker build -t whatsappbot .
+
+      - name: Test import des modules
+        run: docker run --rm --env-file .env whatsappbot python -c "import core.whatsapp_prompts; import core.whatsapp_sender; print('Imports OK')"
+
+      - name: Check présence de la variable d’API
+        run: |
+          if ! grep -q "GROQ_API_KEY" .env; then
+            echo "Erreur : GROQ_API_KEY manquant dans .env"
+            exit 1
+          fi
