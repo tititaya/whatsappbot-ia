@@ -32,7 +32,7 @@ async def whatsapp_webhook(request: Request):
     sender = form.get("From")
 
     print(f"Message reçu de {sender} : {msg_body}")
-
+    print(dict(form))
     if not sender:
         return JSONResponse(content={"error": "Missing sender"}, status_code=400)
 
