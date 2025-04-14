@@ -4,6 +4,8 @@ services:
   whatsappbot:
     build: .
     container_name: whatsappbot
+    ports:
+      - "8080:8080"         # Expose le port local 8080 vers le conteneur
     env_file:
-      - .env
-    command: python main.py
+      - .env                # Charge les variables d’environnement
+    command: python server.py
