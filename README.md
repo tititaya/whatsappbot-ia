@@ -41,6 +41,12 @@ Cela permet de vérifier automatiquement que l’API est active même en cas d�
 
 ---
 
+# Bot WhatsApp
+
+![Docker CI](https://github.com/tititaya/whatsappbot-ia/actions/workflows/docker-ci.yml/badge.svg)
+![Uptime Robot status](https://img.shields.io/uptimerobot/status/m788008867-33ad59c53b82e1a5c0e6cd17)
+
+
 ## Lancement local
 
 ```bash
