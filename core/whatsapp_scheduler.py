@@ -27,7 +27,7 @@ def send_evening_message():
 
 def start_scheduler():
     schedule.every().day.at("08:00").do(send_morning_message)
-    schedule.every().day.at("16:41").do(send_evening_message)
+    schedule.every().day.at("17:10").do(send_evening_message)
 
     print("Bot WhatsApp lancé, en attente d’envoi... (Ctrl+C pour arrêter)")
     while True:
