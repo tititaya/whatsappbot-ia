@@ -1,14 +1,14 @@
-#  Utilise une image Python légère
 FROM python:3.10-slim
 
-#  Crée le dossier de travail dans le conteneur
+# Définir le répertoire de travail
 WORKDIR /app
 
-#  Copie les fichiers dans le conteneur
-COPY . .
-
-#  Installe les dépendances Python
+# Copier le fichier requirements.txt et installer les dépendances
+COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-#  Spécifie la commande à exécuter
+# Copier tout le code
+COPY . .
+
+# Commande par défaut à exécuter
 CMD ["python", "main.py"]

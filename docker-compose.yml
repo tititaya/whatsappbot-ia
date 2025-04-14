@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  whatsappbot:
+    build: .
+    container_name: whatsappbot
+    env_file:
+      - .env
+    command: python main.py
