@@ -7,7 +7,7 @@ Ce bot envoie automatiquement des messages WhatsApp aux horaires définis, gén�
 ## Fonctionnalités
 
 - Génération de messages via l'API Groq  
-- Envoi WhatsApp via Twilio  
+- Envoyer WhatsApp via Twilio  
 - Planification automatisée avec `schedule`  
 - Pipeline CI/CD avec GitHub Actions + Docker
 
