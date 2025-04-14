@@ -52,3 +52,5 @@ jobs:
             -e RECIPIENT_WHATSAPP_NUMBER=${{ secrets.RECIPIENT_WHATSAPP_NUMBER }} \
             whatsappbot \
             python main.py
+
+            
