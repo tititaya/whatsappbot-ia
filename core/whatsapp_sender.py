@@ -1,3 +1,11 @@
+# whatsapp_sender.py
+# -----------------------------------------------------
+# Gère l’envoi des messages WhatsApp via l’API Twilio.
+# Utilise les identifiants d’authentification définis dans config.py.
+# Fournit une fonction unique `send_message()` pour transmettre un message.
+# -----------------------------------------------------
+
+
 import os
 from dotenv import load_dotenv
 from twilio.rest import Client

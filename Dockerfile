@@ -1,20 +1,18 @@
-# Utiliser une image Python légère
+# Utilise une image légère Python
 FROM python:3.10-slim
 
 # Définir le répertoire de travail
 WORKDIR /app
 
-# Copier les dépendances
+# Copier les fichiers nécessaires
 COPY requirements.txt .
-
-# Installer les dépendances Python
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copier tous les fichiers dans le conteneur
+# Copier le reste du code
 COPY . .
 
-# Exposer le port utilisé par Flask
+# Exposer le port attendu par Railway
 EXPOSE 8080
 
-# Lancer l'API Flask pour le /health-check
-CMD ["python", "server.py"]
+# Lancer l'application FastAPI via uvicorn
+CMD ["uvicorn", "server:app", "--host", "0.0.0.0", "--port", "8080"]

@@ -1,3 +1,12 @@
+# whatsapp_prompts.py
+# -----------------------------------------------------
+# Génère dynamiquement un prompt textuel pour l’API Groq.
+# Le prompt varie selon le moment de la journée (matin ou soir).
+# Il combine une salutation aléatoire et une question sincère sur Naël.
+# Ce fichier centralise les règles de ton, de style et de formulation.
+# -----------------------------------------------------
+
+
 from datetime import datetime
 import random
 

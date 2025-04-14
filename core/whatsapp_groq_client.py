@@ -1,3 +1,13 @@
+# whatsapp_groq_client.py
+# -----------------------------------------------------
+# Ce module envoie une requête POST à l’API Groq (LLM).
+# Il génère une réponse textuelle à partir d’un prompt.
+# La clé d’API est chargée depuis le fichier config.py.
+# Utilise le modèle "llama3-70b-8192" pour générer les messages.
+# -----------------------------------------------------
+
+
+
 import os
 import httpx
 from config import GROQ_API_KEY
