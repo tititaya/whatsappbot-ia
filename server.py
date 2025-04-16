@@ -22,7 +22,7 @@ def read_root():
 @app.get("/health", include_in_schema=False)
 @app.head("/health", include_in_schema=False)
 def health_check():
-    return JSONResponse(content={"status": "Actif"}, status_code=200)
+    return JSONResponse(content={"status": "ne t'inquiète pas Ornel  je suis toujours Actif et je n'exiterais pas a t'envoyer un petit message si jamais il ya un bug"}, status_code=200)
 
 # ➤ Réponse auto à Twilio
 @app.post("/webhook", include_in_schema=False)
